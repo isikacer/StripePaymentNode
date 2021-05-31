@@ -1,0 +1,23 @@
+{
+    "merch": [
+      {
+        "id": 5,
+        "name": "Coffee Cup PRO",
+        "price": 1999,
+        "imgName": "Cofee.png"
+      },
+      {
+        "id": 6,
+        "name": "Coffee Cup",
+        "price": 699,
+        "imgName": "Cofee.png"
+      },
+
+      {
+        "id": 7,
+        "name": "Coffee Cup",
+        "price": 48597,
+        "imgName": "Cofee.png"
+      }
+    ]
+  }

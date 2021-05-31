@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Store</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="styles.css" />
+        <script src="https://js.stripe.com/v3"></script>
+        
+        <script src="store.js" defer></script>
+    </head>
+
+    
+    <body>
+     
+
+        <section class="container content-section">
+            <h2 class="section-header">Offres</h2>
+            <div class="shop-items">
+                <% items.merch.forEach(function(item){ %>
+                    <div class="shop-item" data-item-id="<%= item.id %>">
+                        <span class="shop-item-title"><%= item.name %></span>
+                        <img class="shop-item-image" src="Images/<%= item.imgName %>">
+                        <div class="shop-item-details">
+
+                            <span class="shop-item-price">$<%= item.price / 100 %></span>
+                            <form action="/pay" method="POST">
+                                <script
+                                  src="https://checkout.stripe.com/checkout.js"
+                                  class="stripe-button"
+                                  data-key="pk_test_51ISetJA8OovXTbomt44e3piuKWmpcSe24tE0Fm2sjorLwMlj1q8JNhx7afZ5YNImN3GHB7UzEoc5w9YAGwV8gKZ000fFTIy71u"
+                                  data-name="<%= item.name %>"
+                                  data-description="<%= item.name %>"
+                                  data-amount="<%= item.price %>"
+                                  data-currency="eur">
+                                </script>
+                              </form>
+                        </div>
+
+                       
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+
+        
+        
+    
+
+
+
+        <footer class="main-footer">
+            <div class="container main-footer-container">
+                <h3 class="band-name">Store</h3>
+                <ul class="nav footer-nav">
+                    <li>
+                        <a href="https://www.youtube.com" target="_blank">
+                            <img src="Images/youtube.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com" target="_blank">
+                            <img src="Images/Facebook Logo.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>
