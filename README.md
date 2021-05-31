@@ -8,7 +8,8 @@ simple exemple of stripe payment with nodejs
 
  ### **settings .env ** 
 
- create acount in `source :` [https://stripe.com/](https://stripe.com/)
+ create acount in [https://stripe.com/](https://stripe.com/)
+
  copy your stripe public key and private key 
 
  go to file **.env** and do the change
