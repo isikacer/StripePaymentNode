@@ -6,7 +6,7 @@ simple exemple of stripe payment with nodejs
 
  * $ npm install
 
- ### **settings .env ** 
+ ### **settings .env** 
 
  create acount in [https://stripe.com/](https://stripe.com/)
 
