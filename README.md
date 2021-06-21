@@ -17,7 +17,7 @@ simple exemple of stripe payment with nodejs
     STRIPE_SECRET_KEY=your_stripe_secret_key
     STRIPE_PUBLIC_KEY=your_stripe_public_key  
 
-## **ho to run**
+## **how to run**
 
 * $ npm run start
 
