@@ -4,14 +4,16 @@
         <title> Store</title>
         <meta name="description" content="This is the description">
         <link rel="stylesheet" href="styles.css" />
-        <script src="https://js.stripe.com/v3"></script>
-        
+        <script src="https://checkout.stripe.com/checkout.js" defer></script>
+        <script>
+            var stripePublicKey = '<%= stripePublicKey %>'
+        </script>
         <script src="store.js" defer></script>
     </head>
-
-    
     <body>
-     
+        <header class="main-header">
+            <h2 class="band-name band-name-large">Offres</h2>
+        </header>
 
         <section class="container content-section">
             <h2 class="section-header">Offres</h2>
@@ -21,22 +23,9 @@
                         <span class="shop-item-title"><%= item.name %></span>
                         <img class="shop-item-image" src="Images/<%= item.imgName %>">
                         <div class="shop-item-details">
-
                             <span class="shop-item-price">$<%= item.price / 100 %></span>
-                            <form action="/pay" method="POST">
-                                <script
-                                  src="https://checkout.stripe.com/checkout.js"
-                                  class="stripe-button"
-                                  data-key="pk_test_51ISetJA8OovXTbomt44e3piuKWmpcSe24tE0Fm2sjorLwMlj1q8JNhx7afZ5YNImN3GHB7UzEoc5w9YAGwV8gKZ000fFTIy71u"
-                                  data-name="<%= item.name %>"
-                                  data-description="<%= item.name %>"
-                                  data-amount="<%= item.price %>"
-                                  data-currency="eur">
-                                </script>
-                              </form>
+                            <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
                         </div>
-
-                       
                     </div>
                 <% }) %>
             </div>
@@ -44,7 +33,21 @@
 
         
         
-    
+        <section class="container content-section">
+            <hr>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
 
 
 
